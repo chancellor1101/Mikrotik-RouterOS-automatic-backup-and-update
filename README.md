@@ -14,7 +14,7 @@ This script provides an ability to create Mikrotik's daily backups to email. You
 - Script includes primary information about the device into the email message. So you can easily find the backup you need among multiple devices.
 - For safety purposes, an automatic update process will not be started if script could not send backups to email.
 - Routerboard firmware can be automatically upgraded according to the installed RouterOS version.
-
+- Ability to upload backup files additionally to a FTP server.
 
 ## Script operating modes:
 **Backups only** - script creates system and config backups and sends them to specified email as an attachment. Using email account as storage for your backups.  
@@ -54,7 +54,7 @@ Start Time: `03:10:00` (the start time has to be different for all your mikrotik
 Interval: `1d 00:00:00`  
 On Event: `/system script run BackupAndUpdate;`  
 ![](https://github.com/beeyev/Mikrotik-RouterOS-automatic-backup-and-update/raw/master/howto/scheduler-task.png)  
-  
+
 Or you can use this command to create the task:
 ```
 /system scheduler add name="Firmware Updater" on-event="/system script run BackupAndUpdate;" start-time=03:10:00 interval=1d comment="" disabled=no
